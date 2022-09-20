@@ -15,28 +15,32 @@ function myGame(){
     resultUserStat.appendChild(spanTag1);
     resultCompStat.appendChild(spanTag2);
     winner.appendChild(spanTag3);
+    var compWin = 0;
+    var userWin = 0;    
     //TODO: game logic
 
     //when rock is clicked by user
     rock.addEventListener('click' , ()=>{
         let options = ["Rock","Paper","Scissor"];
         let computer =  options[Math.floor(Math.random() * options.length)];
-        let compWin = 0;
-        let userWin = 0;    
         spanTag1.innerText = "Rock";
         spanTag2.innerText = computer;
         //user wins else user wins or tie
         if (computer === 'Paper') {
-            compScoreValue.innerText= compWin + 1;
+            compWin = compWin + 1
+            compScoreValue.innerText= compWin;
             spanTag3.innerText = "Computer Wins";
         }
         else if(computer === 'Scissor'){
-            userScoreValue.innerText = userWin + 1;
+            userWin = userWin + 1
+            userScoreValue.innerText =  userWin;
             spanTag3.innerText = "You Win"; 
         }
         else{
-            compScoreValue.innerText = 0;
-            userScoreValue.innerText = 0 
+            compWin = compWin + 1;
+            userWin = userWin + 1
+            compScoreValue.innerText = compWin;
+            userScoreValue.innerText = userWin;
             spanTag3.innerText = "Match Tie"
         }
     });
@@ -45,22 +49,24 @@ function myGame(){
     paper.addEventListener('click' , ()=>{
         let options = ["Rock","Paper","Scissor"];
         let computer =  options[Math.floor(Math.random() * options.length)];
-        let compWin = 0;
-        let userWin = 0;    
         spanTag1.innerText = "Paper";
         spanTag2.innerText = computer;
         //user wins else user wins or tie
         if (computer === 'Scissor') {
-            compScoreValue.innerText= compWin + 1;
+            compWin = compWin + 1;
+            compScoreValue.innerText= compWin;
             spanTag3.innerText = "Computer Wins";
         }
         else if(computer === 'Rock'){
-            userScoreValue.innerText = userWin + 1;
+            userWin = userWin + 1
+            userScoreValue.innerText = userWin;
             spanTag3.innerText = "You Win"; 
         }
         else{
-            compScoreValue.innerText = 0;
-            userScoreValue.innerText = 0 
+            compWin = compWin + 1;
+            userWin = userWin + 1
+            compScoreValue.innerText = compWin;
+            userScoreValue.innerText = userWin;
             spanTag3.innerText = "Match Tie"
         }
     });
@@ -68,23 +74,25 @@ function myGame(){
     //when scissor is clicked by user
     scissor.addEventListener('click' , ()=>{
         let options = ["Rock","Paper","Scissor"];
-        let computer =  options[Math.floor(Math.random() * options.length)];
-        let compWin = 0;
-        let userWin = 0;    
+        let computer =  options[Math.floor(Math.random() * options.length)]; 
         spanTag1.innerText = "Scissor";
         spanTag2.innerText = computer;
         //user wins else user wins or tie
         if (computer === 'Rock') {
-            compScoreValue.innerText= compWin + 1;
+            compWin = compWin + 1
+            compScoreValue.innerText= compWin;
             spanTag3.innerText = "Computer Wins";
         }
         else if(computer === 'Paper'){
-            userScoreValue.innerText = userWin + 1;
+            userWin = userWin + 1;
+            userScoreValue.innerText = userWin;
             spanTag3.innerText = "You Win"; 
         }
         else{
-            compScoreValue.innerText = 0;
-            userScoreValue.innerText = 0 
+            compWin = compWin + 1;
+            userWin = userWin + 1;
+            compScoreValue.innerText = compWin;
+            userScoreValue.innerText = userWin;
             spanTag3.innerText = "Match Tie"
         }
     });
